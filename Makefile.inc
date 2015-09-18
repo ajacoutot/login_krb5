@@ -1,5 +1,6 @@
 CPPFLAGS+=	-Wall
 LDADD+=		-lutil
+LDFLAGS+=	-Wl,-rpath=/usr/local/heimdal/lib
 
 BINOWN=		root
 BINGRP=		auth
