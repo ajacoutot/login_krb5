@@ -71,6 +71,13 @@ Unknown arguments are ignored.
 will prompt the user for a password and report back to the
 invoking program whether or not the authentication was
 successful.
+.Pp
+As documented in
+.Xr login.conf 5 ,
+.Nm
+being a locally added authentication style, the authentication helper and style
+needs to start with a dash:
+.Em login_-krb5-or-pwd .
 .Sh SEE ALSO
 .Xr login 1 ,
 .Xr passwd 1 ,
