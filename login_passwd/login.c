@@ -159,6 +159,7 @@ main(int argc, char **argv)
 
 	if (password != NULL)
 		memset(password, 0, strlen(password));
+		explicit_bzero(password, strlen(password));
 	if (ret != AUTH_OK)
 		fprintf(back, BI_REJECT "\n");
 

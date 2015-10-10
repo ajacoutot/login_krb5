@@ -54,7 +54,7 @@ pwd_login(char *username, char *password, char *wheel, int lastchance,
 	if (crypt_checkpass(password, goodhash) == 0)
 		passok = 1;
 	plen = strlen(password);
-	memset(password, 0, plen);
+	explicit_bzero(password, plen);
 
 	if (!passok)
 		return (AUTH_FAILED);
