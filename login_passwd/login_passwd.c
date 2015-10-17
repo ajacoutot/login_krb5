@@ -51,6 +51,10 @@ pwd_login(char *username, char *password, char *wheel, int lastchance,
 		goodhash = pwd->pw_passwd;
 
 	setpriority(PRIO_PROCESS, 0, -4);
+
+	if (pledge("stdio rpath", NULL) == -1)
+		err(1, "pledge");
+
 	if (crypt_checkpass(password, goodhash) == 0)
 		passok = 1;
 	plen = strlen(password);
