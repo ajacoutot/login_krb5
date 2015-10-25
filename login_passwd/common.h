@@ -56,7 +56,6 @@ extern FILE *back;
 
 #ifdef PASSWD
 int pwd_login(char *, char *, char *, int, char *);
-int pwd_gensalt(char *, int, login_cap_t *, char);
 #endif
 #ifdef KRB5
 int krb5_login(char *, char *, char *, int, int, char *);
