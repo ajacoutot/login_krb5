@@ -46,7 +46,7 @@ pwd_login(char *username, char *password, char *wheel, int lastchance,
 	if (password == NULL)
 		return (AUTH_FAILED);
 
-	pwd = getpwnam(username);
+	pwd = getpwnam_shadow(username);
 	if (pwd)
 		goodhash = pwd->pw_passwd;
 
