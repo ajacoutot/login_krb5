@@ -1,4 +1,4 @@
-/* $OpenBSD: common.h,v 1.4 2012/06/01 01:43:19 dlg Exp $ */
+/* $OpenBSD: common.h,v 1.6 2015/10/24 13:53:20 ajacoutot Exp $ */
 /*-
  * Copyright (c) 2001 Hans Insulander <hin@openbsd.org>.
  * All rights reserved.
