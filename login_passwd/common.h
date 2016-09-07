@@ -1,4 +1,4 @@
-/* $OpenBSD: common.h,v 1.6 2015/10/24 13:53:20 ajacoutot Exp $ */
+/* $OpenBSD: common.h,v 1.8 2016/09/03 10:50:16 gsoares Exp $ */
 /*-
  * Copyright (c) 2001 Hans Insulander <hin@openbsd.org>.
  * All rights reserved.
@@ -43,6 +43,7 @@
 #include <err.h>
 #include <util.h>
 #include <limits.h>
+#include <readpassphrase.h>
 
 
 #define MODE_LOGIN 0
