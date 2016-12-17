@@ -6,9 +6,9 @@ MAN=		${PROG}.8
 
 CPPFLAGS+=	-DKRB5
 CPPFLAGS+=	-I${.CURDIR}/../login_passwd
-CPPFLAGS+=	$$(/usr/local/heimdal/bin/krb5-config --cflags) -I/usr/local/include
+CPPFLAGS+=	$$(/usr/local/heimdal/bin/krb5-config --cflags)
 
-LDADD+=		$$(/usr/local/heimdal/bin/krb5-config --libs) -L/usr/local/lib
+LDADD+=		$$(/usr/local/heimdal/bin/krb5-config --deps --libs)
 
 .PATH:		${.CURDIR}/../login_passwd
 
