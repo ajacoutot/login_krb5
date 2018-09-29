@@ -108,7 +108,7 @@ main(int argc, char **argv)
 	/* get the password hash before pledge(2) or it will return '*' */
 	pwd = getpwnam_shadow(username);
 
-	if (pledge("stdio rpath tty id", NULL) == -1) {
+	if (pledge("stdio rpath tty id getpw dns inet flock", NULL) == -1) {
 		syslog(LOG_ERR, "pledge: %m");
 		exit(1);
 	}
