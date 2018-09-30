@@ -98,7 +98,7 @@ krb5_login(char *username, char *invokinguser, char *password, int login,
 	if (username == NULL || password == NULL)
 		return (AUTH_FAILED);
 
-	if (strcmp(__progname, "krb5-or-pwd") == 0 &&
+	if (strcmp(__progname, "-krb5-or-pwd") == 0 &&
 	    strcmp(username,"root") == 0 && invokinguser[0] == '\0')
 		return (AUTH_FAILED);
 
