@@ -171,6 +171,7 @@ main(int argc, char **argv)
 #ifdef PASSWD
 	if (ret != AUTH_OK)
 		ret = pwd_login(username, password, wheel, lastchance, class, pwd_save);
+	free (pwd_save);
 #endif
 
 	if (password != NULL)
