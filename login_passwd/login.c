@@ -48,7 +48,9 @@ main(int argc, char **argv)
 	int arg_login = 0, arg_notickets = 0;
 	char invokinguser[LOGIN_NAME_MAX];
 	char *wheel = NULL, *class = NULL;
-	struct passwd *pwd;
+#ifdef PASSWD
+	struct passwd *pwd, *pwd_save;
+#endif
 
 	invokinguser[0] = '\0';
 
@@ -105,8 +107,12 @@ main(int argc, char **argv)
 		exit(1);
 	}
 
+#ifdef PASSWD
 	/* get the password hash before pledge(2) or it will return '*' */
 	pwd = getpwnam_shadow(username);
+	if ((pwd_save = pw_dup(pwd)) == NULL)
+		exit(1);
+#endif
 
 	if (pledge("stdio rpath tty id getpw dns inet flock", NULL) == -1) {
 		syslog(LOG_ERR, "pledge: %m");
@@ -164,7 +170,7 @@ main(int argc, char **argv)
 #endif
 #ifdef PASSWD
 	if (ret != AUTH_OK)
-		ret = pwd_login(username, password, wheel, lastchance, class, pwd);
+		ret = pwd_login(username, password, wheel, lastchance, class, pwd_save);
 #endif
 
 	if (password != NULL)
