@@ -164,10 +164,8 @@ main(int argc, char **argv)
 	}
 
 	ret = AUTH_FAILED;
-#ifdef KRB5
 	ret = krb5_login(username, invokinguser, password, arg_login,
 			 !arg_notickets, class);
-#endif
 #ifdef PASSWD
 	if (ret != AUTH_OK)
 		ret = pwd_login(username, password, wheel, lastchance, class, pwd_save);

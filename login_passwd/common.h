@@ -58,8 +58,6 @@ extern FILE *back;
 #ifdef PASSWD
 int pwd_login(char *, char *, char *, int, char *, struct passwd *);
 #endif
-#ifdef KRB5
 int krb5_login(char *, char *, char *, int, int, char *);
-#endif
 
 #endif /* !_COMMON_H_ */

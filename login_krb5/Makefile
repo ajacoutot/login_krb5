@@ -4,7 +4,6 @@ PROG=		login_krb5
 SRCS=		login.c login_krb5.c
 MAN=		${PROG}.8
 
-CPPFLAGS+=	-DKRB5
 CPPFLAGS+=	-I${.CURDIR}/../login_passwd
 CPPFLAGS+=	$$(/usr/local/heimdal/bin/krb5-config --cflags)
 
