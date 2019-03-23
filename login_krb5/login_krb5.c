@@ -154,8 +154,10 @@ krb5_login(char *username, char *invokinguser, char *password, int login,
 		break;
 	}
 	case KRB5KRB_AP_ERR_MODIFIED:
-		/* XXX syslog here? */
+		krb5_syslog(context, LOG_ERR, ret, "KRB5KRB_AP_ERR_MODIFIED");
+		break;
 	case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+		krb5_syslog(context, LOG_ERR, ret, "KRB5KRB_AP_ERR_BAD_INTEGRITY");
 		break;
 	default:
 		krb5_syslog(context, LOG_ERR, ret, "verify");
