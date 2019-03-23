@@ -114,7 +114,7 @@ main(int argc, char **argv)
 		exit(1);
 #endif
 
-	if (pledge("stdio rpath tty id getpw dns inet flock", NULL) == -1) {
+	if (pledge("stdio rpath tty id getpw dns inet flock cpath wpath chown", NULL) == -1) {
 		syslog(LOG_ERR, "pledge: %m");
 		exit(1);
 	}
