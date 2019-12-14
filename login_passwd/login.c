@@ -161,7 +161,7 @@ main(int argc, char **argv)
 		password = readpassphrase("Password:", pbuf, sizeof(pbuf), RPP_ECHO_OFF);
 		break;
 	case MODE_CHALLENGE:
-		fprintf(back, BI_AUTH "\n");
+		fprintf(back, BI_SILENT "\n");
 		exit(0);
 		break;
 	default:
