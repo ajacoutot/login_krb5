@@ -38,7 +38,7 @@ pwd_login(char *username, char *password, char *wheel, int lastchance,
 
 	if (wheel != NULL && strcmp(wheel, "yes") != 0) {
 		fprintf(back, BI_VALUE " errormsg %s\n",
-		    auth_mkvalue("you are not in group wheel"));
+		    "you are not in group wheel");
 		fprintf(back, BI_REJECT "\n");
 		return (AUTH_FAILED);
 	}
