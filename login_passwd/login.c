@@ -110,7 +110,7 @@ main(int argc, char **argv)
 #ifdef PASSWD
 	/* get the password hash before pledge(2) or it will return '*' */
 	pwd = getpwnam_shadow(username);
-	if ((pwd_save = pw_dup(pwd)) == NULL)
+	if (pwd == NULL || (pwd_save = pw_dup(pwd)) == NULL)
 		exit(1);
 #endif
 
